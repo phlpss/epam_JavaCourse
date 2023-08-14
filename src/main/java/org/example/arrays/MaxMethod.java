@@ -1,4 +1,4 @@
-package org.example;
+package org.example.arrays;
 public class MaxMethod {
     public static void main(String[] args) {
         int[] values = new int[]{806, 19, 140, 392, 36, 528, 542, 890, 424};

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.conditionsAndLoops;
 
 // implement a program to solve quadratic equations.
 // For the given quadratic equation coefficients (ax² + bx + c = 0),

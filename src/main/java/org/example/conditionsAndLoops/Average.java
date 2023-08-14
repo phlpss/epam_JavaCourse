@@ -1,4 +1,4 @@
-package org.example;
+package org.example.conditionsAndLoops;
 import java.util.Scanner;
 
 // You must read sequence values until the next one is 0.

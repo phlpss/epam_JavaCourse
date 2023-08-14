@@ -1,4 +1,4 @@
-package org.example;
+package org.example.conditionsAndLoops;
 import java.util.Scanner;
 
 // Proceed to FindMaxInSeq and write a program that reads a sequence of integers

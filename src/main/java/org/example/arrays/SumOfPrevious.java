@@ -1,4 +1,4 @@
-package org.example;
+package org.example.arrays;
 
 import java.util.Arrays;
 
@@ -20,10 +20,7 @@ public class SumOfPrevious {
         result[1] = false;
 
         for(int i = 2; i < array.length; i++) {
-            if(array[i] == array[i - 1] + array[i - 2]) {
-                result[i] = true;
-            } else
-                result[i] = false;
+            result[i] = array[i] == array[i - 1] + array[i - 2];
         }
         return result;
     }

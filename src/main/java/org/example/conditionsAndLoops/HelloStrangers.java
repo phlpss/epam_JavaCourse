@@ -1,4 +1,4 @@
-package org.example;
+package org.example.conditionsAndLoops;
 
 // Please, proceed to HelloStrangers class and write a program that:
 //  Asks for a number - amount of strangers to meet

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.conditionsAndLoops;
 
 import java.util.Scanner;
 
