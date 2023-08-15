@@ -19,22 +19,22 @@ public class LocalMaximaRemove {
         System.out.println("Array: " + Arrays.toString(a1));
         System.out.println("Expected: \t" + Arrays.toString(b1));
         System.out.println("Actual: \t" + Arrays.toString(removeLocalMaxima(a1)));
-        System.out.println("");
+        System.out.println();
 
         System.out.println("Array: " + Arrays.toString(a2));
         System.out.println("Expected: \t" + Arrays.toString(b2));
         System.out.println("Actual: \t" + Arrays.toString(removeLocalMaxima(a2)));
-        System.out.println("");
+        System.out.println();
 
         System.out.println("Array: " + Arrays.toString(a3));
         System.out.println("Expected: \t" + Arrays.toString(b3));
         System.out.println("Actual: \t" + Arrays.toString(removeLocalMaxima(a3)));
-        System.out.println("");
+        System.out.println();
 
         System.out.println("Array: " + Arrays.toString(a4));
         System.out.println("Expected: \t" + Arrays.toString(b4));
         System.out.println("Actual: \t" + Arrays.toString(removeLocalMaxima(a4)));
-        System.out.println("");
+        System.out.println();
 
         {
             int[] array = new int[1000];
@@ -48,7 +48,7 @@ public class LocalMaximaRemove {
             System.out.println("Array[0]: " + actual[0]);
             System.out.println("Array[996]: " + actual[996]);
 
-            System.out.println("");
+            System.out.println();
         }
 
         {
@@ -63,7 +63,7 @@ public class LocalMaximaRemove {
 
     }
     public static int[] removeLocalMaxima(int[] array) {
-        List<Integer> temp = new ArrayList<Integer>();
+        List<Integer> temp = new ArrayList<>();
 
         if(array[0] <= array[1]) {
             temp.add(array[0]);
