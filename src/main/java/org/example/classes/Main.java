@@ -16,6 +16,29 @@ public class Main {
 
         System.out.println("result is " + line1.intersection(line2));
 
+        ////////////////////////////////////////////////////////////////
+        {
+            double length = new Segment(new Point_2(0, 0), new Point_2(3, 4)).length();
+            System.out.println(length);
+        }
+
+        {
+            Segment first = new Segment(new Point_2(0, 0), new Point_2(4, 4));
+            Segment second = new Segment(new Point_2(2, 0), new Point_2(0, 2));
+            Point_2 intersection = first.intersection(second);
+
+            System.out.println(intersection.getX());
+            System.out.println(intersection.getY());
+        }
+
+        {
+            Segment first = new Segment(new Point_2(0, 0), new Point_2(4, 0));
+            Segment second = new Segment(new Point_2(2, 1), new Point_2(1, 2));
+            Point_2 intersection = first.intersection(second);
+
+            System.out.println(intersection == null);
+        }
+
     }
 
 }
