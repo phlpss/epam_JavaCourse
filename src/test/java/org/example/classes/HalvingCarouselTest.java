@@ -1,5 +1,6 @@
-package com.epam.rd.autotasks;
+package org.example.classes;
 
+import org.example.classes.HalvingCarousel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -7,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class DecrementingCarouselTest {
+class HalvingCarouselTest {
 
     @Test
     void checkAddElement() {
-        DecrementingCarousel carousel = new DecrementingCarousel(5);
+        HalvingCarousel carousel = new HalvingCarousel(5);
         assertFalse(carousel.addElement(0));
         assertFalse(carousel.addElement(-1));
         assertFalse(carousel.addElement(-123456));
@@ -43,7 +44,7 @@ class DecrementingCarouselTest {
 
     @Test
     void checkAddElementAfterRun() {
-        DecrementingCarousel carousel = new DecrementingCarousel(5);
+        HalvingCarousel carousel = new HalvingCarousel(5);
 
         assertTrue(carousel.addElement(1));
         assertTrue(carousel.addElement(2));
@@ -62,7 +63,7 @@ class DecrementingCarouselTest {
 
     @Test
     void testCarouselRunsSingleTimeOnly() {
-        DecrementingCarousel carousel = new DecrementingCarousel(4);
+        HalvingCarousel carousel = new HalvingCarousel(4);
         carousel.addElement(4);
 
         assertNotNull(carousel.run());
