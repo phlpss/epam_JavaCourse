@@ -1,5 +1,6 @@
-package com.epam.rd.autotasks;
+package org.example.classes;
 
+import org.example.classes.DecrementingCarousel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

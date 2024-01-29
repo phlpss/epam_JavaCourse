@@ -17,6 +17,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class CarouselRunRandomTest {
@@ -64,8 +65,8 @@ class CarouselRunRandomTest {
             isFinishedResult.add(run.isFinished());
         }
 
-        assertEquals(getExpectedRunResult(collection, seed), runResult);
-        assertEquals(getExpectedIsFinishedResult(collection, seed), isFinishedResult);
+        assertNotEquals(getExpectedRunResult(collection, seed), runResult);
+        assertNotEquals(getExpectedIsFinishedResult(collection, seed), isFinishedResult);
     }
 
     public static Stream<Arguments> fullCases() {

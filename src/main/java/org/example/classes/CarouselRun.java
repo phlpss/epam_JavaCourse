@@ -13,15 +13,18 @@ import java.util.List;
 
 
 public class CarouselRun {
-    int i = 0;
+    static int i = 0;
     private final int capacity;
     private boolean running;
-    private List<Integer> elements;
+    static List<Integer> elements;
+    private DecrementingCarousel carousel;
 
-    public CarouselRun(int capacity, boolean running, List<Integer> elements) {
+    public CarouselRun(int capacity, boolean running, List<Integer> elements, int i, DecrementingCarousel carousel) {
         this.capacity = capacity;
         this.running = running;
         this.elements = elements;
+        this.i = i;
+        this.carousel = carousel;
     }
 
     /**
@@ -30,20 +33,7 @@ public class CarouselRun {
      * Skips zero elements. When there is no more elements to decrease, returns -1
      */
     public int next() {
-        if (elements.isEmpty()) {
-            return -1;
-        }
-        int currentValue = elements.get(i);
-        if (currentValue - 1 <= 0) {
-            elements.remove(i);
-            if (i >= elements.size()) {
-                i = 0;
-            }
-        } else {
-            elements.set(i, currentValue - 1);
-            i = i < elements.size() - 1 ? i + 1 : 0;
-        }
-        return currentValue;
+        return carousel.next();
     }
 
     public boolean isFinished() {

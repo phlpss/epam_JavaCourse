@@ -15,6 +15,7 @@ import java.util.ArrayList;
  **/
 
 public class DecrementingCarousel {
+    static int i = 0;
     private final int capacity;
     private boolean running;
     protected ArrayList<Integer> elements = new ArrayList<>();
@@ -40,7 +41,35 @@ public class DecrementingCarousel {
             return null;
         }
         running = true;
-        return new CarouselRun(capacity, running, elements);
+        return new CarouselRun(capacity, running, elements, i, this);
+    }
+
+    public int next() {
+        if (CarouselRun.elements.isEmpty()) {
+            return -1;
+        }
+
+        int currentValue = CarouselRun.elements.get(i);
+
+        if (shouldRemoveElement(currentValue)) {
+            CarouselRun.elements.remove(i);
+            if (i >= CarouselRun.elements.size()) {
+                i = 0;
+            }
+        } else {
+            updateElementAndIndex(currentValue);
+        }
+
+        return currentValue;
+    }
+
+    boolean shouldRemoveElement(int value) {
+        return value <= 1;
+    }
+
+    protected void updateElementAndIndex(int currentValue) {
+        CarouselRun.elements.set(i, currentValue - 1);
+        i = (i < CarouselRun.elements.size() - 1) ? i + 1 : 0;
     }
 }
 

@@ -1,16 +1,18 @@
 package org.example.classes;
+class Point {
+    private final double x;
+    private final double y;
 
-public class Point {
-    private final int x;
-    private final int y;
-
-    public Point(int x, int y) {
+    public Point(final double x, final double y) {
         this.x = x;
         this.y = y;
     }
 
-    @Override
-    public String toString() {
-        return String.format("(%d;%d)", x, y);
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
     }
 }

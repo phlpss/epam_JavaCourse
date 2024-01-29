@@ -1,9 +1,9 @@
 package org.example.classes;
 
 class Segment {
-    Point_2 start, end;
+    Point start, end;
 
-    public Segment(Point_2 start, Point_2 end) {
+    public Segment(Point start, Point end) {
         if (start.getX() == end.getX() && start.getY() == end.getY()) {
             throw new IllegalArgumentException("Degenerate segment: start and end points are the same.");
         }
@@ -17,13 +17,13 @@ class Segment {
         return Math.sqrt(dx * dx + dy * dy);
     }
 
-    public Point_2 middle() {
+    public Point middle() {
         double mx = (start.getX() + end.getX()) / 2.0;
         double my = (start.getY() + end.getY()) / 2.0;
-        return new Point_2(mx, my);
+        return new Point(mx, my);
     }
 
-    public Point_2 intersection(Segment another) {
+    public Point intersection(Segment another) {
         double x1 = start.getX(), y1 = start.getY();
         double x2 = end.getX(), y2 = end.getY();
         double x3 = another.start.getX(), y3 = another.start.getY();
@@ -38,7 +38,7 @@ class Segment {
         double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / denominator;
         double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / denominator;
 
-        Point_2 intersectionPoint = new Point_2(px, py);
+        Point intersectionPoint = new Point(px, py);
 
         if (isPointOnSegment(intersectionPoint) && another.isPointOnSegment(intersectionPoint)) {
             return intersectionPoint;
@@ -47,7 +47,7 @@ class Segment {
         return null;
     }
 
-    private boolean isPointOnSegment(Point_2 p) {
+    private boolean isPointOnSegment(Point p) {
         return Math.min(start.getX(), end.getX()) <= p.getX() && p.getX() <= Math.max(start.getX(), end.getX()) &&
                 Math.min(start.getY(), end.getY()) <= p.getY() && p.getY() <= Math.max(start.getY(), end.getY());
     }
